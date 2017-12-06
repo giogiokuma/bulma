@@ -1,0 +1,17 @@
+@import "./utilities/_all"; 
+@import "./base/generic"; 
+
+
+@import "./utilities/initial-variables";
+@import "./utilities/functions";
+@import "./utilities/derived-variables";
+@import "./utilities/controls";
+@import "./utilities/animations";
+
+@import "./grid/columns"; 
+
+$gradation1: linear-gradient(-135deg, #E4A972, #9941D8);
+$gradation1-invert: #fff;
+
+$info: $gradation1;
+$info-invert: $gradation1-invert;

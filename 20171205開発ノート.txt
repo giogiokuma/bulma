@@ -1,0 +1,70 @@
+
+**gitからダウンロード**
+https://github.com/jgthms/bulma
+
+ 
+
+
+a. カスタマイズ
+a-1. mystyles.scss > ユーティリティをインストール
+@import "../sass/utilities/initial-variables";
+@import "../sass/utilities/functions";
+
+a-2. node-sass 書き出し => OK 
+node-sass ./scss/mystyles.scss ./css/mystyles.css
+
+
+
+b. クラス
+generic.sass > 設定
+
+c. インポート（Modular）39 の .sassファイルを個々にインポートできる
+https://bulma.io/documentation/overview/modular/
+
+@import "bulma/sass/utilities/_all"; 
+@import "bulma/sass/grid/columns"; 
+
+d. box.sass 　変数
+https://github.com/jgthms/bulma/blob/master/sass/elements/box.sass#L1,L8
+
+-----
+20171206 
+ 目的 > bulma hero にグラデーションバックグラウンドを追加
+ 例えば下のようなグラデーションを追加したい
+ background: linear-gradient(-135deg, #E4A972, #9941D8);
+ 
+1. 登録 
+$gradation1: linear-gradient(-135deg, #E4A972, #9941D8);
+$gradation1-invert: #fff;
+
+2. $primary を上書き
+$primary: $gradation1;
+$primary-invert: $gradation1-invert;
+
+----------------------------------------
+【重要】--trace を使って処理を書き出す
+エラー発生
+
+**再考**
+コマンド
+node-sass sass/mystyles.scss css/mystyles.css
+
+**mystyles.scss**
+@import "./utilities/_all";  /* １行目に書いてあるとうまくいく */　
+
+@import "./base/generic"; 
+
+
+@import "./utilities/initial-variables";
+@import "./utilities/functions";
+@import "./utilities/derived-variables";
+@import "./utilities/controls";
+@import "./utilities/animations";
+
+@import "./grid/columns"; 
+
+$gradation1: linear-gradient(-135deg, #E4A972, #9941D8);
+$gradation1-invert: #fff;
+----------------------------------------
+
+
