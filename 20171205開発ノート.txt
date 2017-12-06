@@ -50,8 +50,7 @@ $primary-invert: $gradation1-invert;
 node-sass sass/mystyles.scss css/mystyles.css
 
 **mystyles.scss**
-@import "./utilities/_all";  /* １行目に書いてあるとうまくいく */　
-
+@import "./utilities/_all"; //  １行目に書いてあると成功する
 @import "./base/generic"; 
 
 
@@ -65,6 +64,11 @@ node-sass sass/mystyles.scss css/mystyles.css
 
 $gradation1: linear-gradient(-135deg, #E4A972, #9941D8);
 $gradation1-invert: #fff;
+
+$info: $gradation1;
+$info-invert: $gradation1-invert;
+
+@import "bulma";  // 最後にこれが必要
 ----------------------------------------
 
 
